@@ -158,6 +158,10 @@ function handleFormSubmission(data) {
     
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
+
+    const mailtoLink = `mailto:melbinjohnson123@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`)}`;
+    
+    window.location.href = mailtoLink;
     
     setTimeout(() => {
         submitButton.textContent = originalText;
